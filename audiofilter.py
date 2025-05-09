@@ -27,8 +27,9 @@ class AudioFilterer:
             if freq < self.low_freq_cutoff_ or freq > self.high_freq_cutoff_:
                 filtered_results_[i] = 0
         
-        print(f"Original non-zero bins: {np.count_nonzero(fft_result_)}")
-        print(f"Filtered non-zero bins: {np.count_nonzero(filtered_results_)}")
+        # debugging code to compare frequencies of the fft (original) and after filtering-- gives an idea of how much of the audio was filtered
+        # print(f"Original non-zero bins: {np.count_nonzero(fft_result_)}")
+        # print(f"Filtered non-zero bins: {np.count_nonzero(filtered_results_)}")
 
         # inverse fft to construct the filtered signal
         filtered_audio_samples_ = np.real(np.fft.ifft(filtered_results_)) # get rid of imaginary noise (introduced as a result of floating point precision rounding)
