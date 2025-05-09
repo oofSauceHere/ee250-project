@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LetterViewer</title>
+    <script>
+        setInterval(() => {
+            fetch("/status")
+            .then(r => r.json())
+            .then(data => {
+                if (data.ready) location.reload();
+            });
+        }, 5000)
+    </script>
+</head>
+<body>
+    <h1>LetterWriter</h1>
+    <img src="./ageofstars.jpg" alt="placeholder" width="500"><br>
+    <a href="./ageofstars.jpg" download><button>Download Image</button></a>
+
+    <h3>Original Audio:</h3>
+    <audio controls>
+        <source src="./testing-audio/night-walk-1.mp3" type="audio/mp3">
+        Your browser doesn't support audio.
+    </audio>
+
+    <h3>Filtered Audio:</h3>
+    <audio controls>
+        <source src="./testing-audio/night-walk-1.mp3_filtered.wav" type="audio/wav">
+        Your browser doesn't support audio.
+    </audio>
+</body>
+</body>
+</html>
