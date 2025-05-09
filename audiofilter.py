@@ -6,6 +6,7 @@ import soundfile as sf
 class AudioFilterer:
     def __init__(self, audio_file_name):
         self.f_name = audio_file_name
+        # the frequencies range we keep (between the low cutoff and high cutoff)
         self.low_freq_cutoff_= 80
         self.high_freq_cutoff_ = 3500
 
