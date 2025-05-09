@@ -40,5 +40,5 @@ class AudioFilterer:
 
         # convert filtered data into an audio file
         int16_conversion_data = (filtered_audio_samples_ * 32767).astype(np.int16)
-        sf.write((self.f_name+"_filtered.wav"), int16_conversion_data, sampling_rate_)
-        print(f"Filtered audio has been saved as '{self.f_name}_filtered'")
+        sf.write("./server_files/filtered.wav", int16_conversion_data, sampling_rate_)
+        print(f"Filtered audio has been saved as 'filtered.wav'")
