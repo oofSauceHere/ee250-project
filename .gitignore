@@ -3,3 +3,6 @@ _pycache_/
 server_files/*
 static/*
 testing-audio/
+out/*
+audio/
+Handwriting-Transformers/
