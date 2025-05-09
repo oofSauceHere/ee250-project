@@ -11,7 +11,7 @@ def index():
 
 @app.route("/receive", methods=["POST"])
 def receive():
-    ft.get_files(['original', 'filtered_audio', 'letter'])
+    ft.get_files(['original', 'filtered_audio', 'document'])
     return "Files Received!"
 
 @app.route("/status")

@@ -2,7 +2,7 @@ from flask import Flask, request
 import requests
 import os
 from data_transfer import FileTransferer
-from audiofilter import AudioFilterer
+from handwritinggenerator import HandwritingGenerator
 
 app = Flask(__name__)
 ft = FileTransferer(save_dir="server_files")
@@ -22,14 +22,17 @@ def send_letter():
     else:
         return "Audio file not found!", 400
 
-    af = AudioFilterer(audio_path)
-    af.filter_audio()
+    HG = HandwritingGenerator(audio_path)
+    HG.filter()
+    HG.transcribe()
+    HG.generate_handwriting()
+    HG.crop()
 
     # send the letter, filtered audio, and original audio
     # REMEMBER TO CHANGE THE IP ADDRESS T_T
     ft.send_files("http://127.0.0.1:5001/receive", {
-        'letter': "./server_files/ageofstars.jpg",
         'filtered_audio': "server_files/filtered.wav",
+        'document': "server_files/document.png",
         'original': audio_path
     })
 

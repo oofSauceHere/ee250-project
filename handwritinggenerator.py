@@ -27,4 +27,4 @@ class HandwritingGenerator:
         cropped = img[0:height//8, 725:width]
 
         # write image
-        cv2.imwrite("out/document.png", cropped)
+        cv2.imwrite("server_files/document.png", cropped)
