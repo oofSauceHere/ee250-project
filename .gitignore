@@ -1,0 +1,5 @@
+venv/
+_pycache_/
+server_files/*
+static/*
+testing-audio/
