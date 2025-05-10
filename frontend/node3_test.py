@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import os
-from data_transfer import FileTransferer
+from backend.data_transfer import FileTransferer
 
 app = Flask(__name__)
 ft = FileTransferer(save_dir="static")
