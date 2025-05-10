@@ -1,7 +1,7 @@
 venv/
 __pycache__/
-server_files/*
-static/*
+**/server_files/*
+**/static/*
 out/*
 audio/
 Handwriting-Transformers/
