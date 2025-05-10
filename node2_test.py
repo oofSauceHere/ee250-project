@@ -30,7 +30,7 @@ def send_letter():
 
     # send the letter, filtered audio, and original audio
     # REMEMBER TO CHANGE THE IP ADDRESS T_T
-    ft.send_files("http://127.0.0.1:5001/receive", {
+    ft.send_files("http://192.168.99.21:5001/receive", {
         'filtered_audio': "server_files/filtered.wav",
         'document': "server_files/document.png",
         'original': audio_path

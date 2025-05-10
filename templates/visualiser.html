@@ -11,23 +11,59 @@
             });
         }, 5001)
     </script>
+    <style>
+        * {
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html, body, .container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #doc {
+            border: 1px solid grey;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(2, 96, 2);
+        }
+    </style>
 </head>
 <body>
-    <h1>LetterWriter</h1>
-    <img src="{{ url_for('static', filename='document.png')}}" alt="placeholder" width="500"><br>
-    <a href="/static/document.png" download><button>Download Image</button></a>
+    <div class="container">
+        <h1>LetterWriter</h1>
+        <img id="doc" src="{{ url_for('static', filename='document.png')}}" alt="placeholder" width="500"><br>
+        <a href="/static/document.png" download><button>Download Image</button></a>
 
-    <h3>Original Audio:</h3>
-    <audio controls>
-        <source src="/static/original.wav" type="audio/wav">
-        Your browser doesn't support audio.
-    </audio>
+        <h3>Original Audio:</h3>
+        <audio controls>
+            <source src="static/original.wav" type="audio/wav">
+            Your browser doesn't support audio.
+        </audio>
 
-    <h3>Filtered Audio:</h3>
-    <audio controls>
-        <source src="/static/filtered_audio.wav" type="audio/wav">
-        Your browser doesn't support audio.
-    </audio>
+        <h3>Filtered Audio:</h3>
+        <audio controls>
+            <source src="static/filtered_audio.wav" type="audio/wav">
+            Your browser doesn't support audio.
+        </audio>
+    </div>
 </body>
 </body>
 </html>
